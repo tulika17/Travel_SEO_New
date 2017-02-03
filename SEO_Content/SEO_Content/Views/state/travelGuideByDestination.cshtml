@@ -1,0 +1,64 @@
+﻿@model SEO_Content.Models.City
+
+@{
+    ViewBag.Title = "travelGuideByDestination";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+ <nav>
+	    <div id="menubar">
+          <ul id="nav">
+            <li class="current"><a href="index.html"> @Html.DisplayFor(modelItem => modelItem.city_name)</a></li>
+            <li><a href="ourwork.html" >Whether</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="projects.html"></a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div><!--close menubar-->	
+      </nav>
+<div id="site_content">		
+ <div class="sidebar_container">      
+ </div>
+  <div id="content">
+   <div class="content_item">
+ @*  <p> @Html.DisplayNameFor(model => model.description)</p>*@
+      <p> @Html.DisplayFor(modelItem => modelItem.description)</p>
+            <p> @Html.DisplayFor(modelItem => modelItem.desc1)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc2)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc3)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc4)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc5)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc6)</p>
+        <p> @Html.DisplayFor(modelItem => modelItem.desc7)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc8)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc9)</p>
+      <p> @Html.DisplayFor(modelItem => modelItem.desc10)</p>
+   </div>
+  </div>
+</div>
+
+
+    
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.city_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.state_id)
+        </td>
+        <td>
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.whether)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.best_time_to_visit)
+        </td>
+        <td>
+    @*        @Html.ActionLink("Edit", "Edit", new { id = modelItem.city_id }) |
+            @Html.ActionLink("Details", "Details", new { id = modelItem.city_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = modelItem.city_id })*@
+        </td>
+    </tr>
+

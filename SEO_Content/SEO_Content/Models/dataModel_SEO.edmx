@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Travel_SEOContentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Travel_SEOContentModelStoreContainer">
+          <EntitySet Name="City" EntityType="Travel_SEOContentModel.Store.City" store:Type="Tables" store:Schema="dbo" store:Name="City">
+            <DefiningQuery>SELECT 
+      [City].[city_id] AS [city_id], 
+      [City].[city_name] AS [city_name], 
+      [City].[state_id] AS [state_id], 
+      [City].[description] AS [description], 
+      [City].[whether] AS [whether], 
+      [City].[best_time_to_visit] AS [best_time_to_visit], 
+      [City].[places_to_visit] AS [places_to_visit], 
+      [City].[desc1] AS [desc1], 
+      [City].[desc2] AS [desc2], 
+      [City].[desc3] AS [desc3], 
+      [City].[desc4] AS [desc4], 
+      [City].[desc5] AS [desc5], 
+      [City].[desc6] AS [desc6], 
+      [City].[desc7] AS [desc7], 
+      [City].[desc8] AS [desc8], 
+      [City].[desc9] AS [desc9], 
+      [City].[desc10] AS [desc10]
+      FROM [dbo].[City] AS [City]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="country" EntityType="Travel_SEOContentModel.Store.country" store:Type="Tables" store:Schema="dbo" store:Name="country">
+            <DefiningQuery>SELECT 
+      [country].[country_id] AS [country_id], 
+      [country].[country_name] AS [country_name]
+      FROM [dbo].[country] AS [country]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="state" EntityType="Travel_SEOContentModel.Store.state" store:Type="Tables" store:Schema="dbo" store:Name="state">
+            <DefiningQuery>SELECT 
+      [state].[state_id] AS [state_id], 
+      [state].[state_name] AS [state_name], 
+      [state].[country_id] AS [country_id]
+      FROM [dbo].[state] AS [state]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Travel_SEOContent.dbo.City' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="city_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="state_id" Type="int" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="whether" Type="nvarchar(max)" />
+          <Property Name="best_time_to_visit" Type="nvarchar(max)" />
+          <Property Name="places_to_visit" Type="nvarchar(max)" />
+          <Property Name="desc1" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc2" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc3" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc4" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc5" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc6" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc7" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc8" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc9" Type="nvarchar" MaxLength="500" />
+          <Property Name="desc10" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Travel_SEOContent.dbo.country' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="country_id" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="country_name" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Travel_SEOContent.dbo.state' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="state_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="state_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="country_id" Type="smallint" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Travel_SEOContentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Travel_SEOContentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="countries" EntityType="Travel_SEOContentModel.country" />
+          <EntitySet Name="states" EntityType="Travel_SEOContentModel.state" />
+          <EntitySet Name="Cities" EntityType="Travel_SEOContentModel.City" />
+        </EntityContainer>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="country_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country_name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="state_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state_name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="country_id" Type="Int16" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Type="Int32" Name="city_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="city_name" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="state_id" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="whether" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="best_time_to_visit" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="places_to_visit" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc1" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc2" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc3" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc4" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc5" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc6" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc7" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc8" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc9" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desc10" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Travel_SEOContentModelStoreContainer" CdmEntityContainer="Travel_SEOContentEntities">
+          <EntitySetMapping Name="countries">
+            <EntityTypeMapping TypeName="Travel_SEOContentModel.country">
+              <MappingFragment StoreEntitySet="country">
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+                <ScalarProperty Name="country_name" ColumnName="country_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="states">
+            <EntityTypeMapping TypeName="Travel_SEOContentModel.state">
+              <MappingFragment StoreEntitySet="state">
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+                <ScalarProperty Name="state_name" ColumnName="state_name" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="Travel_SEOContentModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="desc10" ColumnName="desc10" />
+                <ScalarProperty Name="desc9" ColumnName="desc9" />
+                <ScalarProperty Name="desc8" ColumnName="desc8" />
+                <ScalarProperty Name="desc7" ColumnName="desc7" />
+                <ScalarProperty Name="desc6" ColumnName="desc6" />
+                <ScalarProperty Name="desc5" ColumnName="desc5" />
+                <ScalarProperty Name="desc4" ColumnName="desc4" />
+                <ScalarProperty Name="desc3" ColumnName="desc3" />
+                <ScalarProperty Name="desc2" ColumnName="desc2" />
+                <ScalarProperty Name="desc1" ColumnName="desc1" />
+                <ScalarProperty Name="places_to_visit" ColumnName="places_to_visit" />
+                <ScalarProperty Name="best_time_to_visit" ColumnName="best_time_to_visit" />
+                <ScalarProperty Name="whether" ColumnName="whether" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="dataModel_SEO">
+        <EntityTypeShape EntityType="Travel_SEOContentModel.country" Width="1.5" PointX="4" PointY="0.625" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Travel_SEOContentModel.state" Width="1.5" PointX="2.875" PointY="2.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Travel_SEOContentModel.City" Width="1.5" PointX="0.5" PointY="1.125" Height="4.2879036458333335" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

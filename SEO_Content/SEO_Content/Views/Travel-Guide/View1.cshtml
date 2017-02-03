@@ -1,0 +1,58 @@
+﻿@model SEO_Content.Models.City
+
+@{
+    ViewBag.Title = "View1";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+<h2>View1</h2>
+
+<fieldset>
+    <legend>City</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.city_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.city_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.state_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.state_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.whether)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.whether)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.best_time_to_visit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.best_time_to_visit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.places_to_visit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.places_to_visit)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.city_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

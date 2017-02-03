@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Travel_SEOContentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Travel_SEOContentModelStoreContainer">
+    <EntitySet Name="City" EntityType="Travel_SEOContentModel.Store.City" store:Type="Tables" store:Schema="dbo" store:Name="City">
+      <DefiningQuery>SELECT 
+      [City].[city_id] AS [city_id], 
+      [City].[city_name] AS [city_name], 
+      [City].[state_id] AS [state_id], 
+      [City].[description] AS [description], 
+      [City].[whether] AS [whether], 
+      [City].[best_time_to_visit] AS [best_time_to_visit], 
+      [City].[places_to_visit] AS [places_to_visit], 
+      [City].[desc1] AS [desc1], 
+      [City].[desc2] AS [desc2], 
+      [City].[desc3] AS [desc3], 
+      [City].[desc4] AS [desc4], 
+      [City].[desc5] AS [desc5], 
+      [City].[desc6] AS [desc6], 
+      [City].[desc7] AS [desc7], 
+      [City].[desc8] AS [desc8], 
+      [City].[desc9] AS [desc9], 
+      [City].[desc10] AS [desc10]
+      FROM [dbo].[City] AS [City]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="country" EntityType="Travel_SEOContentModel.Store.country" store:Type="Tables" store:Schema="dbo" store:Name="country">
+      <DefiningQuery>SELECT 
+      [country].[country_id] AS [country_id], 
+      [country].[country_name] AS [country_name]
+      FROM [dbo].[country] AS [country]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="state" EntityType="Travel_SEOContentModel.Store.state" store:Type="Tables" store:Schema="dbo" store:Name="state">
+      <DefiningQuery>SELECT 
+      [state].[state_id] AS [state_id], 
+      [state].[state_name] AS [state_name], 
+      [state].[country_id] AS [country_id]
+      FROM [dbo].[state] AS [state]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Travel_SEOContent.dbo.City' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="state_id" Type="int" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="whether" Type="nvarchar(max)" />
+    <Property Name="best_time_to_visit" Type="nvarchar(max)" />
+    <Property Name="places_to_visit" Type="nvarchar(max)" />
+    <Property Name="desc1" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc2" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc3" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc4" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc5" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc6" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc7" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc8" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc9" Type="nvarchar" MaxLength="500" />
+    <Property Name="desc10" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Travel_SEOContent.dbo.country' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="country_name" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Travel_SEOContent.dbo.state' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="state_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="country_id" Type="smallint" />
+  </EntityType>
+</Schema>

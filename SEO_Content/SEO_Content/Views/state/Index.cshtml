@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SEO_Content.Models.state>
+
+@{
+    ViewBag.Title = "stateList";
+}
+
+<h2>stateList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.state_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.state_name)
+             @Html.ActionLink(item.state_name, "travelGuideByDestination", new { city = item.state_name })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.state_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.state_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.state_id })
+            @Html.ActionLink("View Cities", "GetCityNames", new { id = item.state_id })
+        </td>
+    </tr>
+}
+
+</table>

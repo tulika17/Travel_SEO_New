@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Travel_SEOContentModelStoreContainer" CdmEntityContainer="Travel_SEOContentEntities">
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="Travel_SEOContentModel.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="Travel_SEOContentModel.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Travel_SEOContentModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="desc10" ColumnName="desc10" />
+          <ScalarProperty Name="desc9" ColumnName="desc9" />
+          <ScalarProperty Name="desc8" ColumnName="desc8" />
+          <ScalarProperty Name="desc7" ColumnName="desc7" />
+          <ScalarProperty Name="desc6" ColumnName="desc6" />
+          <ScalarProperty Name="desc5" ColumnName="desc5" />
+          <ScalarProperty Name="desc4" ColumnName="desc4" />
+          <ScalarProperty Name="desc3" ColumnName="desc3" />
+          <ScalarProperty Name="desc2" ColumnName="desc2" />
+          <ScalarProperty Name="desc1" ColumnName="desc1" />
+          <ScalarProperty Name="places_to_visit" ColumnName="places_to_visit" />
+          <ScalarProperty Name="best_time_to_visit" ColumnName="best_time_to_visit" />
+          <ScalarProperty Name="whether" ColumnName="whether" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

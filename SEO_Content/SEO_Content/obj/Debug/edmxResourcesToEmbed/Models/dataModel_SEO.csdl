@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Travel_SEOContentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Travel_SEOContentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="countries" EntityType="Travel_SEOContentModel.country" />
+    <EntitySet Name="states" EntityType="Travel_SEOContentModel.state" />
+    <EntitySet Name="Cities" EntityType="Travel_SEOContentModel.City" />
+  </EntityContainer>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="country_name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="state_name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="country_id" Type="Int16" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Type="Int32" Name="city_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="city_name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="state_id" />
+    <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="whether" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="best_time_to_visit" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="places_to_visit" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc1" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc2" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc3" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc4" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc5" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc6" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc7" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc8" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc9" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desc10" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

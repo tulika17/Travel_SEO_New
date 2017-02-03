@@ -1,0 +1,60 @@
+﻿@model IEnumerable<SEO_Content.Models.City>
+
+@{
+    ViewBag.Title = "GetCityNames";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+
+
+<h2>GetCityNames</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.city_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.whether)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.best_time_to_visit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.whether)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.best_time_to_visit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.city_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.city_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.city_id })
+        </td>
+    </tr>
+}
+
+</table>
